@@ -1,0 +1,67 @@
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="style.css" />
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+      <title>
+         Student Dashboard
+      </title>
+   </head>
+   <body style="margin: 0; padding:0;background: white; height: 2000px;">
+<div class="header">
+  <div class="title" >
+  <img src="Student Dashboard.png" width="270" height="70" alt=""/>
+  <div class="bar"></div>
+  </div>
+   </div>
+  <br>
+   <!-- Notification Buttons  -->
+   <div width="50%" align="left">
+     <button onclick="pushInfo()">View Course Notifications</button></br>
+     <button onclick="pushEvent()">View Upcoming Events</button></br>
+     <button onclick="pushWarning()">View Reminders</button></br>
+     <button onclick="closeAll()">Close all</button></br>
+    </div>
+
+      <!-- To do List -->
+     
+      <div width="50%" align="right"> 
+      <input id="input" placeholder="Type here to insert items"> 
+      <br>
+      <ul id="list"></ul>
+      </div>
+      <br>
+   <h2 align="center">Calendar</h2>
+<div align="left">
+    <div class="controls">
+        <p class="next label" onclick="nextMonth()"><i class="fa fa-arrow-right"></i></p>
+        <p class="previous label" onclick="previousMonth()"><i class="fa fa-arrow-left"></i></p>
+        <p id="current-month" class="label bold">January</p>
+    </div>
+
+    <div class="calendar" id="calendar">
+    <!-- Calandar-->
+    </div>
+</div>
+
+</body>
+   
+   <script src="app.js"></script>
+   <script>
+    var notifications = new PageNotifications()
+
+    function pushInfo() {
+        notifications.push("INF221 Assigment due Friday","COM222 Assigment due Friday.</br> ... </br> ... </br> ...","info",false);
+    }
+    function pushEvent() {
+        notifications.push("Social Weekend this Weekend","INF222 presentations next week","event",false);
+    }
+    function pushWarning() {
+        notifications.push("Math test on the 5th of May","INF221 Test - After week 10","warning",false);
+    }
+    function closeAll() {
+        notifications.closeAll();
+    }
+    </script>
+ </html>``
